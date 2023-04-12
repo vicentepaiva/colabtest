@@ -7,12 +7,11 @@ const User = ({data}) => {
 
 
     return(
-        <div>
-            <h2>{data.name.first} {data.name.last}</h2>
-            <p>{data.email}</p>
-            <p>{data.phone}</p>
-            <p>{data.website}</p>
-            <img src={data.picture.thumbnail} alt="User avatar" />
+        <div className="transition duration-400 ease-in-out transform hover:scale-105 bg-white rounded shadow-md p-6 h-full">
+            <h2 className="text-black">{data.name.first} {data.name.last}</h2>
+            <p className="text-black">{data.email}</p>
+            <p className="text-black">{data.phone}</p>
+            <img src={data.picture.thumbnail} alt="User avatar" className="mt-left" />
         </div>
     );
 }
@@ -31,7 +30,7 @@ const [users, setUsers] = useState([]);
     }, []);
 
     return(
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
             {users.map(user => <User key={user.login.uuid} data={user} />)}
         </div>
     );
