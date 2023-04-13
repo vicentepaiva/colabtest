@@ -3,7 +3,7 @@ import { api } from '../lib/axios';
 
 
 
-const User = ({data}) => {
+const UserItem = ({data}) => {
 
 
     return(
@@ -18,7 +18,7 @@ const User = ({data}) => {
 
 export function UserList() {
 const [users, setUsers] = useState([]);
-const [numCards, setNumberCards] = useState(0);
+
 
     const getUsers = async () => {
         const response = await api.get(`https://randomuser.me/api/?results=48`);
@@ -39,7 +39,7 @@ const [numCards, setNumberCards] = useState(0);
           <button  onClick={handleButtonClick} className="transition shadow-md duration-300  transform rounded bg-white hover:bg-violet-900 text-black hover:text-white p-2 ">Ver Usuários</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          {users.map(user => <User key={user.login.uuid} data={user} />)}
+          {users.map(user => <UserItem key={user.login.uuid} data={user} />)}
         </div>
       </div>
     );
