@@ -14,7 +14,7 @@ Os usuários foram listados em formato de cards com imagem, e suas informações
 # Inicializando o projeto
 
 ### Clone o projeto 
-`git@github.com:vicentepaiva/show-blog.git`
+`git@github.com:vicentepaiva/colabtest.git`
 
 ### Baixe as dependências
 `npm install`
